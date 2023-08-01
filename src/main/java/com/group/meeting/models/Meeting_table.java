@@ -3,7 +3,7 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 @Entity
-@Table(name = "meetings")
+@Table
 public class Meeting_table {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
