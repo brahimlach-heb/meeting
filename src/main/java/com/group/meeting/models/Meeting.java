@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 @Entity
 @Table
-public class Meeting_table {
+public class Meeting {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,7 +16,7 @@ public class Meeting_table {
     private LocalDateTime startTime;
 
     @Column(name = "end_time")
-    private LocalDateTime endTime;
+    private LocalDateTime endTime
 
 
 
