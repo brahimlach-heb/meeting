@@ -22,4 +22,15 @@ public class Meetcontroller {
     public  Meeting saveMeet(@RequestBody Meeting meeting){
         return MS.saveMeet(meeting);
     }
+
+    @PutMapping("/update")
+    public Meeting updateMeet(@RequestBody Meeting meeting){
+        return MS.updateMeet(meeting);
+    }
+
+    @DeleteMapping("/delete?id={id}")
+    public String deleteMeet(@PathVariable("id") Long id){
+        MS.deleteMeetById(id);
+        return "deleted";
+    }
 }
