@@ -23,9 +23,23 @@ public class MeetServiceImpl implements MeetService {
     }
 
     @Override
+//    public Meeting updateMeet(Meeting meeting) {
+//        Long meetingId = meeting.getId();
+//        Meeting existingMeeting = meetingRepository.findById(meetingId)
+//                .orElseThrow(() -> new IllegalArgumentException("Meeting with ID " + meetingId + " not found."));
+//
+//        // Update the existingMeeting object with the new values
+//        existingMeeting.setTitle(meeting.getTitle());
+//        existingMeeting.setStartTime(meeting.getStartTime());
+//
+//        return meetingRepository.save(existingMeeting);
+//    }
+
     public Meeting updateMeet(Meeting meeting) {
         return meetingRepository.save(meeting);
     }
+
+
 
     @Override
     public Meeting getMeet(Long id) {

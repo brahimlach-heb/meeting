@@ -23,13 +23,18 @@ public class Meetcontroller {
         return MS.saveMeet(meeting);
     }
 
-    @PutMapping("/update")
-    public Meeting updateMeet(@RequestBody Meeting meeting){
+    @PutMapping("/update/{id}")
+    public Meeting updateMeet(@PathVariable Long id, @RequestBody Meeting meeting) {
+        meeting.setId(id); // Set the ID from the path variable into the Meeting object
         return MS.updateMeet(meeting);
     }
+    //@PutMapping("/update")
+    //public Meeting updateMeet(@RequestBody Meeting meeting){
+      //  return MS.updateMeet(meeting);
+    //}
 
-    @DeleteMapping("/delete")
-    public void deleteMeet(@RequestParam("id") Long id){
+    @DeleteMapping("/delete/{id}")
+    public void deleteMeet(@PathVariable Long id){
         MS.deleteMeetById(id);
     }
 }
