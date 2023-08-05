@@ -1,4 +1,4 @@
-package com.group.meeting.service;
+package com.group.meeting.service.Iservice;
 
 import com.group.meeting.models.Meeting;
 import org.springframework.stereotype.Service;

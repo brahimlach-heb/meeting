@@ -2,13 +2,14 @@ package com.group.meeting.service;
 
 import com.group.meeting.models.Meeting;
 import com.group.meeting.repository.MeetingRepository;
+import com.group.meeting.service.Iservice.MeetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class MeetServiceImpl implements MeetService{
+public class MeetServiceImpl implements MeetService {
     @Autowired
     MeetingRepository meetingRepository;
 

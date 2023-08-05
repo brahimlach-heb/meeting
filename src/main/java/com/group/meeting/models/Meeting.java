@@ -16,7 +16,7 @@ public class Meeting {
     private LocalDateTime startTime;
 
     @Column(name = "end_time")
-    private LocalDateTime endTime
+    private LocalDateTime endTime;
 
 
 
