@@ -21,7 +21,7 @@ public class Meeting {
 
 
     @ElementCollection
-    @CollectionTable(name = "meeting_attendees", joinColumns = @JoinColumn(name = "meeting_id"))
+    @CollectionTable(name = "meeting_attendees", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "attendee")
     private List<String> attendees;
 
