@@ -1,5 +1,7 @@
 package com.group.meeting.models;
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDateTime;
 import java.util.List;
 @Entity
@@ -13,9 +15,11 @@ public class Meeting {
     private String title;
 
     @Column(name = "start_time")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime startTime;
 
     @Column(name = "end_time")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime endTime;
 
 
