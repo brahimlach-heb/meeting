@@ -28,9 +28,8 @@ public class Meetcontroller {
         return MS.updateMeet(meeting);
     }
 
-    @DeleteMapping("/delete?id={id}")
-    public String deleteMeet(@PathVariable("id") Long id){
+    @DeleteMapping("/delete")
+    public void deleteMeet(@RequestParam("id") Long id){
         MS.deleteMeetById(id);
-        return "deleted";
     }
 }
