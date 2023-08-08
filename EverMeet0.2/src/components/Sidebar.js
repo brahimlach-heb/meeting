@@ -20,8 +20,8 @@ function Sidebar({Children}){
             icon:<FaHistory/> 
         },
         {
-            path:"/Friends",
-            name:"Friends",
+            path:"/Schedule",
+            name:"Schedule",
             icon:<FaUserFriends/>    
         },
         {
@@ -39,7 +39,7 @@ function Sidebar({Children}){
         <div className='sidebar'>
       <div className='top_section'></div>
       {menuItem.map((item, index) => (
-        <NavLink to={item.path} key={index} className='link' activeClassName='active'>
+        <NavLink to={item.path} key={index} className='link' activeClassName='active'exact>
           <div className='icon'>{item.icon}</div>
           <div className='link_text'>{item.name}</div>
         </NavLink>

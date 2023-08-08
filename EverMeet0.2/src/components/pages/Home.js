@@ -7,13 +7,13 @@ import '../Home.css'
 
 function Home(){
     return(
-        <>
-        <div style={{ display: 'flex', minHeight: '100vh' }}>
+      <>
+      <div style={{ display: 'flex', minHeight: '100vh' }}>
         <Sidebar />
         <Meet />
       </div>
       <Footer />
-        </>
+      </>
     );
 }
 
