@@ -12,7 +12,7 @@
 }
 
 .categories {
-  background-image: url('../public/images/img-2.jpg');
+  
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -21,7 +21,7 @@
 }
 
 .products {
-  background-image: url('../public/images/img-1.jpg');
+  
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -30,7 +30,7 @@
 }
 
 .user {
-  background-image: url('../public/images/img-8.jpg');
+  
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -39,7 +39,7 @@
 }
 
 .sign-in {
-  background-image: url('../public/images/img-8.jpg');
+  
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -48,7 +48,7 @@
 }
 
 .trailer {
-  background-image: url('../public/images/img-8.jpg');
+  
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

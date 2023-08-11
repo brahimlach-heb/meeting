@@ -2,7 +2,9 @@ import React, { Children } from 'react'
 import {
     FaTh, FaHistory, FaUserFriends, FaSignOutAlt,FaBars
 } from 'react-icons/fa';
+import {AiOutlineSchedule} from 'react-icons/ai';
 import { IoMdSettings } from 'react-icons/io';
+import {BsFillChatLeftTextFill} from 'react-icons/bs';
 
 import { NavLink } from 'react-router-dom';
 import "./Sidebar.css"
@@ -22,12 +24,12 @@ function Sidebar({Children}){
         {
             path:"/Schedule",
             name:"Schedule",
-            icon:<FaUserFriends/>    
+            icon:<AiOutlineSchedule/>    
         },
         {
-            path:"/Setting",
-            name:"Setting",
-            icon:<IoMdSettings/>
+            path:"/Chat",
+            name:"Chat",
+            icon:<BsFillChatLeftTextFill/>
         },
         {
             path:"/Sign Out",
