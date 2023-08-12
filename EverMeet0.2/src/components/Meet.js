@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import './Meet.css'
 import '../App.css';
 import { useState,useEffect } from "react";
@@ -27,6 +27,23 @@ function Meet(){
         });
     }, []);
 
+    const handleDelete = (id) => {
+      fetch(`http://localhost:7070/delete/${id}`, {
+        method: "DELETE",
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          // Remove the deleted meeting from the cards state
+          setCards((prevCards) => prevCards.filter((card) => card.id !== id));
+          console.log(cards);
+        })
+        .catch((error) => {
+          console.error("Error deleting meeting:", error);
+        });
+      }
+
     return(
         <div>
             <section>
@@ -44,7 +61,7 @@ function Meet(){
                             <div className="buttons">
                                 <Link className="butnn">Start</Link>
                                 <Link className="butnn">Edit</Link>
-                                <Link className="butnn">Delete</Link>
+                                <button className="butnn" onClick={() => handleDelete(card.id)}>Delete</button>
                             </div>
                         </div>
                         ))
@@ -55,5 +72,6 @@ function Meet(){
         </div>
     )
 }
+
 
 export default Meet;
