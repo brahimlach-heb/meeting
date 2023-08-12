@@ -1,41 +1,29 @@
 import React from "react";
 import './Meet.css'
 import '../App.css';
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import moment from 'moment';
 
 function Meet(){
-    const [cards] = useState(
-        [
-            {
-                title: "Meeting Name",
-                start:"00:00 AM",
-                end: "00:00 PM",
-                id: "Meeting ID",
-                MHost: "Meeting Host"
-            },
-            {
-                title: "Meeting Name",
-                start:"00:00 AM",
-                end: "00:00 PM",
-                id: "Meeting ID",
-                MHost: "Meeting Host"
-            },
-            {
-                title: "Meeting Name",
-                start:"00:00 AM",
-                end: "00:00 PM",
-                id: "Meeting ID",
-                MHost: "Meeting Host"
-            },
-            {
-                title: "Meeting Name",
-                start:"00:00 AM",
-                end: "00:00 PM",
-                id: "Meeting ID",
-                MHost: "Meeting Host                                 "
-            }
-        ]
-    );
+    const [cards, setCards] = useState([]);
+
+    useEffect(() => {
+      // Fetch data from the API using fetch
+      fetch("http://localhost:7070/getmeetings")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then(data => {
+          // Update the cards state with fetched data
+          setCards(data);
+        })
+        .catch(error => {
+          console.error("Error fetching meetings:", error);
+        });
+    }, []);
 
     return(
         <div>
@@ -47,8 +35,8 @@ function Meet(){
                             cards.map((card, i)=>(
                         <div key= {i} className="card">
                             <h3>Meeting Name: {card.title}</h3>
-                            <p> Start time: {card.start}</p>
-                            <p>End time: {card.end}</p>
+                            <p> Start time: {moment(card.startTime).format('MMMM Do YYYY, h:mm:ss a')}</p>
+                            <p>End time: {moment(card.endTime).format('MMMM Do YYYY, h:mm:ss a')}</p>
                             <p>Meeting ID: {card.id}</p>
                             <p>Meeting Host: {card.MHost}</p>
                             <button className="butnn">Start</button>
