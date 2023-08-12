@@ -4,6 +4,7 @@ import com.group.meeting.models.Meeting;
 import com.group.meeting.service.Iservice.MeetService;
 import com.group.meeting.service.MeetServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ public class Meetcontroller {
     public List<Meeting> get_meet(){
         return MS.getAllMeets();
     }
+
 
     @PostMapping("/save")
     public  Meeting saveMeet(@RequestBody Meeting meeting){
@@ -37,4 +39,7 @@ public class Meetcontroller {
     public void deleteMeet(@PathVariable Long id){
         MS.deleteMeetById(id);
     }
+    @GetMapping("getMeet/{id}")
+    public Meeting getMeetingById(@PathVariable Long id) {
+        return MS.getMeet(id);}
 }
