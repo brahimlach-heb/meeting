@@ -3,6 +3,8 @@ import './Meet.css'
 import '../App.css';
 import { useState,useEffect } from "react";
 import moment from 'moment';
+import { Link } from 'react-router-dom';
+
 
 function Meet(){
     const [cards, setCards] = useState([]);
@@ -39,9 +41,11 @@ function Meet(){
                             <p>End time: {moment(card.endTime).format('MMMM Do YYYY, h:mm:ss a')}</p>
                             <p>Meeting ID: {card.id}</p>
                             <p>Meeting Host: {card.MHost}</p>
-                            <button className="butnn">Start</button>
-                            <button className="butnn">Edit</button>
-                            <button className="butnn">Delete</button>
+                            <div className="buttons">
+                                <Link className="butnn">Start</Link>
+                                <Link className="butnn">Edit</Link>
+                                <Link className="butnn">Delete</Link>
+                            </div>
                         </div>
                         ))
                         }
