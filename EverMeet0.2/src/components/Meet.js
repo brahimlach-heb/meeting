@@ -59,8 +59,8 @@ function Meet(){
                             <p>Meeting ID: {card.id}</p>
                             <p>Meeting Host: {card.MHost}</p>
                             <div className="buttons">
-                                <Link className="butnn">Start</Link>
-                                <Link className="butnn">Edit</Link>
+                                <Link  className="butnn">Start</Link>
+                                <Link to={`/Update/${card.id}`} className="butnn">Edit</Link>
                                 <button className="butnn" onClick={() => handleDelete(card.id)}>Delete</button>
                             </div>
                         </div>

@@ -1,11 +1,40 @@
 // Host.js
 import React, { useState,useEffect } from "react";
-import "./Host.css";
+import "./components/Host.css";
 
-function Host() {
+function Verify(props) {
  const [formData, setFormData] = useState({
-  date: '',
+    date:'',
     });
+    useEffect(() => {
+        // URL of the API you want to fetch
+        const apiUrl = 'http://localhost:7070/getMeet/'+props.userid;
+    
+        fetch(apiUrl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`Network response was not ok: ${response.statusText}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            const date = data.startTime.split('T')[0];
+            const startTime = data.startTime.split('T')[1];
+            const endTime = data.endTime.split('T')[1];
+            
+            setFormData(prevData => ({
+                ...prevData,
+                id:data.id,
+                title:data.title,
+                date: date,
+                startTime: startTime,
+                endTime: endTime,
+            }));
+        })
+          .catch((error) => {
+            console.log(error);
+          });
+      },[]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -43,20 +72,18 @@ function Host() {
       if (!response.ok) {
           throw new Error('Network response was not ok');
       }
-      else{
-        setFormData({
-          date: '',
-          startTime: '',
-          endTime: '',
-          title: '',
-      });
-  
-      // Alert the user
-      alert('Meeting data submitted successfully!');
-      }
 
       const data = await response.json();
       console.log(data);
+      setFormData({
+        date: '',
+        startTime: '',
+        endTime: '',
+        title: '',
+    });
+
+    // Alert the user
+    alert('Meeting data submitted successfully!');
   } catch (error) {
       console.error('There was a problem with the fetch operation:', error.message);
   }
@@ -66,9 +93,8 @@ function Host() {
 }, [formData]);
   return (
     <div className="host-container">
-        <h2 className="soukaina">Host a Meeting</h2>
-        <h1></h1>
-        <h1></h1>
+        <h2 className="soukaina">update a Meeting</h2>
+       
       <form className="host-form" onSubmit={handleSubmit}>
         
         <div className="input-group">
@@ -112,10 +138,10 @@ function Host() {
           />
         </div>
         
-        <button type="submit">Create Meeting</button>
+        <button type="submit">update</button>
       </form>
     </div>
   );
 }
 
-export default Host;
+export default Verify;
