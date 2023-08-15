@@ -27,11 +27,6 @@ function Sidebar({Children}){
             icon:<AiOutlineSchedule/>    
         },
         {
-            path:"/Update",
-            name:"Update",
-            icon:<AiOutlineSchedule/>    
-        },
-        {
             path:"/Chat",
             name:"Chat",
             icon:<BsFillChatLeftTextFill/>

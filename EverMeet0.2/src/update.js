@@ -75,12 +75,7 @@ function Verify(props) {
 
       const data = await response.json();
       console.log(data);
-      setFormData({
-        date: '',
-        startTime: '',
-        endTime: '',
-        title: '',
-    });
+
 
     // Alert the user
     alert('Meeting data submitted successfully!');
