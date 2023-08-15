@@ -1,0 +1,88 @@
+.video-call-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  height: 100vh;
+  overflow: hidden; /* Add padding to create space for buttons */
+}
+
+.video-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 40px; /* Leave space for buttons */
+  display: flex;
+  background-color: #252323;
+  justify-content: center;
+  align-items: center;
+}
+
+.local-video,
+.remote-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Scale video to cover entire area */
+  border: 2px solid #000000;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #252323;
+  padding: 10px;/* Semi-transparent background */
+  gap: 20px;
+}
+
+.control-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.control-button.muted {
+  background-color: #dc3545;
+}
+
+.control-button.camera-on {
+  background-color: #28a745;
+}
+
+.control-button.camera-off {
+  background-color: #dc3545;
+}
+
+.end-call {
+  background-color: #dc3545;
+}
+
+.control-button:hover {
+  background-color: #0056b3;
+}
+
+/* Fullscreen styles */
+.video-call-container:-webkit-full-screen {
+  width: 100vw;
+  height: 100vh;
+}
+.video-call-container:-moz-full-screen {
+  width: 100vw;
+  height: 100vh;
+}
+.video-call-container:-ms-fullscreen {
+  width: 100vw;
+  height: 100vh;
+}
+.video-call-container:fullscreen {
+  width: 100vw;
+  height: 100vh;
+}

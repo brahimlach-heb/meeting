@@ -8,6 +8,10 @@ import { Link } from 'react-router-dom';
 
 function Meet(){
     const [cards, setCards] = useState([]);
+    const openVideoCallInNewTab = () => {
+          const newTab = window.open('/call', '_blank');
+          newTab.focus();
+        };
 
     useEffect(() => {
       // Fetch data from the API using fetch
@@ -59,7 +63,7 @@ function Meet(){
                             <p>Meeting ID: {card.id}</p>
                             <p>Meeting Host: {card.MHost}</p>
                             <div className="buttons">
-                                <Link  className="butnn">Start</Link>
+                                <button onClick={openVideoCallInNewTab} className="butnn">Start</button>
                                 <Link to={`/Update/${card.id}`} className="butnn">Edit</Link>
                                 <button className="butnn" onClick={() => handleDelete(card.id)}>Delete</button>
                             </div>
