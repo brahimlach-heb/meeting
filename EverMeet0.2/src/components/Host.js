@@ -32,7 +32,7 @@ function Host() {
     console.log(dataToSend)
     // Here you can perform any actions you want with the submitted data
     try {
-      const response = await fetch('http://localhost:7070/save', {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/save`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',

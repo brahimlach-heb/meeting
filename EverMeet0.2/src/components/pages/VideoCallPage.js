@@ -3,7 +3,6 @@ import '../VideoCall.css'; // Import your CSS file
 
 const VideoCallPage = () => {
   const localVideoRef = useRef(null);
-  const remoteVideoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(false);
   const [isCameraOn, setIsCameraOn] = useState(true);
   const videoCallContainerRef = useRef(null);

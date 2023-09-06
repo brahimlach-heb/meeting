@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
 //import { Button } from './Button';
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import './Navbar.css';
 import profileImage from '../images/img-2.jpg'; 
 
 
 function Navbar() {
-  
 
+    const navigate = useNavigate();
+    const auth = localStorage.getItem('user');
+    const logout=()=>{
+        localStorage.clear();
+        navigate('/');
+    }
   return (
     <>
       <nav className='navbar'>
@@ -25,11 +30,45 @@ function Navbar() {
                   <img src={profileImage} alt='Profile' className='profile-img' />
                </div>
             </li>
-            <li className='nav-item'>
-              <Link to='#' className='nav-links'>
-                Chat
-              </Link>
-            </li>
+
+
+
+
+
+              {
+                  auth?
+                    <>
+                      <li className='nav-item'>
+                          <Link to='/Chat' className='nav-links'>
+                              Chat
+                          </Link>
+                      </li>
+                      <li className='nav-item'>
+                          <Link onClick={logout} to='/' className='nav-links'>LOGOUT</Link>
+                        </li>
+                    </>
+                      :<>
+                          <li className='nav-item'>
+                              <Link to='/' className='nav-links'>
+                                  Signin
+                              </Link>
+                          </li>
+                          <li className='nav-item'>
+                              <Link to='signup' className='nav-links'>
+                                  Signup
+                              </Link>
+                          </li>
+
+                      </>
+              }
+
+
+
+
+
+
+
+
           </ul>
           {/* {button && <Button buttonStyle='btn--outline'>SIGN IN</Button>}*/}
         </div>

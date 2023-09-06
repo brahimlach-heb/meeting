@@ -8,11 +8,17 @@ import {BsFillChatLeftTextFill} from 'react-icons/bs';
 
 import { NavLink } from 'react-router-dom';
 import "./Sidebar.css"
+import {useNavigate} from 'react-router-dom';
 
 function Sidebar({Children}){
+    const navigate = useNavigate();
+    const logout=()=>{
+        localStorage.clear();
+        navigate('/');
+    }
     const menuItem=[
         {
-            path:"/",
+            path:"/home",
             name:"Meetings",
             icon:<FaTh/>
         },
@@ -30,11 +36,6 @@ function Sidebar({Children}){
             path:"/Chat",
             name:"Chat",
             icon:<BsFillChatLeftTextFill/>
-        },
-        {
-            path:"/Sign Out",
-            name:"Sign Out",
-            icon:<FaSignOutAlt/>    
         }
     ]
     return(
@@ -46,7 +47,15 @@ function Sidebar({Children}){
           <div className='link_text'>{item.name}</div>
         </NavLink>
       ))
-      }<main>{Children}</main>
+      }
+
+            <NavLink onClick={logout} to='/'  className='link' activeClassName='active'exact>
+                <div className='icon'><FaSignOutAlt/>  </div>
+                <div className='link_text'>Sign Out</div>
+            </NavLink>
+
+
+      <main>{Children}</main>
     </div>       
     )
 }

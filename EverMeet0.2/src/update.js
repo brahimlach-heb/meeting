@@ -8,7 +8,7 @@ function Verify(props) {
     });
     useEffect(() => {
         // URL of the API you want to fetch
-        const apiUrl = 'http://localhost:7070/getMeet/'+props.userid;
+        const apiUrl = 'http://localhost:8080/getMeet/'+props.userid;
     
         fetch(apiUrl)
           .then((response) => {
@@ -61,7 +61,7 @@ function Verify(props) {
     console.log(dataToSend)
     // Here you can perform any actions you want with the submitted data
     try {
-      const response = await fetch('http://localhost:7070/save', {
+      const response = await fetch('http://localhost:8080/save', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',

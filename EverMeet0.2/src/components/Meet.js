@@ -15,7 +15,7 @@ function Meet(){
 
     useEffect(() => {
       // Fetch data from the API using fetch
-      fetch("http://localhost:7070/getmeetings")
+      fetch(`${process.env.REACT_APP_BASE_URL}/getmeetings`)
         .then(response => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -32,7 +32,7 @@ function Meet(){
     }, []);
 
     const handleDelete = (id) => {
-      fetch(`http://localhost:7070/delete/${id}`, {
+      fetch(`${process.env.REACT_APP_BASE_URL}/delete/${id}`, {
         method: "DELETE",
       })
         .then((response) => {
