@@ -65,12 +65,16 @@
     width: 160px;
     box-sizing: border-box;
   }
+
+  .h2F{
+    font-size:160%;
+  }
   
-  .footer-link-items h2 {
+  .footer-link-items .h2F {
     margin-bottom: 16px;
   }
   
-  .footer-link-items > h2 {
+  .footer-link-items > .h2F {
     color: #fff;
   }
   
@@ -85,7 +89,7 @@
     transition: 0.3s ease-out;
   }
   
-  .footer-email-form h2 {
+  .footer-email-form .h2 {
     margin-bottom: 2rem;
   }
   

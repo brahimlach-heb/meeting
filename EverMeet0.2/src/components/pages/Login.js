@@ -43,13 +43,13 @@ function Login() {
             <div className="container fbox">
                 <div className="row lrow">
                     <h3 className='lhead'>Signin</h3>
-                    <div class="col-xl-12">
+                    <div className="col-xl-12">
                         <form onSubmit={handleSubmit}>
-                            <input type="email" class="form-control" placeholder="Email" aria-label="First name" required name='email' onChange={(e) => {
+                            <input type="email" className="form-control" placeholder="Email" aria-label="First name" required name='email' onChange={(e) => {
                                 setEmail(e.target.value);
                             }} />
                             <br />
-                            <input type="password" class="form-control" placeholder="Password" aria-label="First name" required name='pass' onChange={(e) => {
+                            <input type="password" className="form-control" placeholder="Password" aria-label="First name" required name='pass' onChange={(e) => {
                                 setPass(e.target.value);
                             }} />
                             <br />

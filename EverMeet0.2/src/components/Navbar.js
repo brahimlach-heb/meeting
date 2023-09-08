@@ -19,33 +19,20 @@ function Navbar() {
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo'>
              EverMeet.
-            <i class='fab fa-typo3' />
+            <i className='fab fa-typo3' />
           </Link>
           <div className='menu-icon' >
             
           </div>
           <ul className='nav-menu'>
-          <li className='nav-item'>
-               <div className='profile-picture'>
-                  <img src={profileImage} alt='Profile' className='profile-img' />
-               </div>
-            </li>
-
-
-
-
-
               {
                   auth?
                     <>
                       <li className='nav-item'>
-                          <Link to='/Chat' className='nav-links'>
-                              Chat
-                          </Link>
+                      <div className='profile-picture'>
+                        <img src={profileImage} alt='Profile' className='profile-img' />
+                      </div>
                       </li>
-                      <li className='nav-item'>
-                          <Link onClick={logout} to='/' className='nav-links'>LOGOUT</Link>
-                        </li>
                     </>
                       :<>
                           <li className='nav-item'>

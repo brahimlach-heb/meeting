@@ -88,7 +88,7 @@ function Verify(props) {
 }, [formData]);
   return (
     <div className="host-container">
-        <h2 className="soukaina">update a Meeting</h2>
+        <h2 className="soukaina">update&nbsp;a&nbsp;Meeting</h2>
        
       <form className="host-form" onSubmit={handleSubmit}>
         

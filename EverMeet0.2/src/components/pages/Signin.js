@@ -44,21 +44,21 @@ function Signin() {
             <div className="container fbox">
                 <div className="row srow">
                     <h3 className='shead'>Sign Up</h3>
-                    <div class="col-xl-12">
+                    <div className="col-xl-12">
                         <form onSubmit={handleSubmit}>
-                            <input type="text" class="form-control" placeholder="First name" required name='firstName' onChange={(e)=>{
+                            <input type="text" className="form-control" placeholder="First name" required name='firstName' onChange={(e)=>{
                                 setFisrtName(e.target.value);
                             }}/>
                             <br />
-                            <input type="text" class="form-control" placeholder="Last name" required name='lastName' onChange={(e)=>{
+                            <input type="text" className="form-control" placeholder="Last name" required name='lastName' onChange={(e)=>{
                                 setLastName(e.target.value);
                             }}/>
                             <br />
-                            <input type="email" class="form-control" placeholder="Email" required name='email' onChange={(e)=>{
+                            <input type="email" className="form-control" placeholder="Email" required name='email' onChange={(e)=>{
                                 setEmail(e.target.value);
                             }}/>
                             <br />
-                            <input type="password" class="form-control" placeholder="Password" required name='pass' onChange={(e)=>{
+                            <input type="password" className="form-control" placeholder="Password" required name='pass' onChange={(e)=>{
                                 setPass(e.target.value);
                             }}/>
                             <br />

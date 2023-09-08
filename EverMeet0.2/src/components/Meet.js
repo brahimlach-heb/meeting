@@ -50,22 +50,22 @@ function Meet(){
 
     return(
         <div>
-            <section>
+            <section className="sectionM">
                 <div className="containeer">
-                    <h1>Upcoming Meetings</h1>
+                    <h1 className="h1M">Upcoming&nbsp;Meetings</h1>
                     <div className="cards">
                         {
                             cards.map((card, i)=>(
                         <div key= {i} className="card">
-                            <h3>Meeting Name: {card.title}</h3>
-                            <p> Start time: {moment(card.startTime).format('MMMM Do YYYY, h:mm:ss a')}</p>
-                            <p>End time: {moment(card.endTime).format('MMMM Do YYYY, h:mm:ss a')}</p>
-                            <p>Meeting ID: {card.id}</p>
-                            <p>Meeting Host: {card.MHost}</p>
+                            <h3 className="h3M">Title: {card.title}</h3>
+                            <p className="pM">Start time: {moment(card.startTime).format('MMMM Do YYYY, h:mm:ss a')}</p>
+                            <p className="pM">End time: {moment(card.endTime).format('MMMM Do YYYY, h:mm:ss a')}</p>
+                            <p className="pM">Meeting ID: {card.id}</p>
+                            <p className="pM">Meeting Host: {card.MHost}</p>
                             <div className="buttons">
-                                <button onClick={openVideoCallInNewTab} className="butnn">Start</button>
+                                <Link onClick={openVideoCallInNewTab} className="butnn">Start</Link>
                                 <Link to={`/Update/${card.id}`} className="butnn">Edit</Link>
-                                <button className="butnn" onClick={() => handleDelete(card.id)}>Delete</button>
+                                <Link className="butnn" onClick={() => handleDelete(card.id)}>Delete</Link>
                             </div>
                         </div>
                         ))

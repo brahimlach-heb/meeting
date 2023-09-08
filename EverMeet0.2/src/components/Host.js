@@ -66,7 +66,7 @@ function Host() {
 }, [formData]);
   return (
     <div className="host-container">
-        <h2 className="soukaina">Host a Meeting</h2>
+        <h2 className="H2HO">Host&nbsp;a&nbsp;Meeting</h2>
         <h1></h1>
         <h1></h1>
       <form className="host-form" onSubmit={handleSubmit}>
@@ -112,7 +112,7 @@ function Host() {
           />
         </div>
         
-        <button type="submit">Create Meeting</button>
+        <button className="buttonH" type="submit">Create Meeting</button>
       </form>
     </div>
   );

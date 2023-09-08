@@ -1,9 +1,8 @@
 import React from 'react';
-import '../../App.css';
 import Meet from '../Meet';
 import Sidebar from '../Sidebar';
 import Footer from '../Footer';
-import '../Home.css'
+import '../Meet.css';
 import Navbar from '../Navbar';
 
 function History(){
@@ -12,7 +11,7 @@ function History(){
         <Navbar/>
         <div style={{ display: 'flex', minHeight: '100vh' }}>
         <Sidebar />
-        <h1>Previous Meetings</h1>
+        <h1 className='h1M'>Previous&nbsp;Meetings</h1>
       </div>
       <Footer />
         </>
