@@ -10,14 +10,15 @@ import Login from "./components/pages/Login";
 import Signin from "./components/pages/Signin";
 import PrivateComponent from "./components/pages/PrivateComponent";
 import VideoCallPage from './components/pages/VideoCallPage'
+import Acceuil from './components/pages/Acceuil';
 
 function App() {
   return (
     <>
 
       <Routes>
-
-        <Route path='/' element={<Login />}></Route>
+        <Route path='/' element={<Acceuil />}></Route>
+        <Route path='/login' element={<Login />}></Route>
 
 
         <Route element={<PrivateComponent />}>
