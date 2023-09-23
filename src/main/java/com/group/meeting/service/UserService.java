@@ -1,6 +1,6 @@
 package com.group.meeting.service;
 
-import com.group.meeting.dao.UserRepo;
+import com.group.meeting.repository.UserRepo;
 import com.group.meeting.models.User;
 import com.group.meeting.service.Iservice.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;

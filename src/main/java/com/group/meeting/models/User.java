@@ -2,11 +2,15 @@ package com.group.meeting.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,4 +25,8 @@ public class User extends BaseEntity{
 	@Email
 	private String email;
 	private String pass;
+
+	@OneToMany
+	List<Historique> historiqueList;
+
 }

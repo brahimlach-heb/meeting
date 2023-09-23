@@ -9,10 +9,8 @@ import { Link } from 'react-router-dom';
 function Meet(){
     const [cards, setCards] = useState([]);
     const openVideoCallInNewTab = () => {
-          const newTab = window.open('/call', '_blank');
-          newTab.focus();
+          window.location.href='http://localhost:8080/';
         };
-
     useEffect(() => {
       // Fetch data from the API using fetch
       fetch(`${process.env.REACT_APP_BASE_URL}/getmeetings`)
