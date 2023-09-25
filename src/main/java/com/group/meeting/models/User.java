@@ -1,5 +1,8 @@
 package com.group.meeting.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -10,6 +13,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -26,7 +30,8 @@ public class User extends BaseEntity{
 	private String email;
 	private String pass;
 
-	@OneToMany
-	List<Historique> historiqueList;
+	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+	@JsonManagedReference
+	List<Historique> historiqueList=new ArrayList<>();
 
 }

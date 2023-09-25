@@ -6,9 +6,10 @@ import jakarta.jws.soap.SOAPBinding;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Objects;
 
 public interface Ihistorique {
-    boolean save_and_delete(Long idmeet,Long iduser);
-    User GetAllHistory(Long iduser);
+    Object save_and_delete(Long idmeet, Long iduser);
+    List<Historique> GetAllHistory(Long iduser);
 
 }
