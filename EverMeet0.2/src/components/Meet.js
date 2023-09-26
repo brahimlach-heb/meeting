@@ -50,7 +50,7 @@ function Meet(){
         <div>
             <section className="sectionM">
                 <div className="containeer">
-                    <h1 className="h1M">Upcoming&nbsp;Meetings</h1>
+                    <h1 className="h1M">Upcoming&nbsp;Meetings</h1> <button className="jbyd" onClick={openVideoCallInNewTab}>Join By ID</button>
                     <div className="cards">
                         {
                             cards.map((card, i)=>(
@@ -59,7 +59,6 @@ function Meet(){
                             <p className="pM">Start time: {moment(card.startTime).format('MMMM Do YYYY, h:mm:ss a')}</p>
                             <p className="pM">End time: {moment(card.endTime).format('MMMM Do YYYY, h:mm:ss a')}</p>
                             <p className="pM">Meeting ID: {card.id}</p>
-                            <p className="pM">Meeting Host: {card.MHost}</p>
                             <div className="buttons">
                                 <Link onClick={openVideoCallInNewTab} className="butnn">Start</Link>
                                 <Link to={`/Update/${card.id}`} className="butnn">Edit</Link>

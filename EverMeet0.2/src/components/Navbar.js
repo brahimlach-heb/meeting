@@ -36,12 +36,12 @@ function Navbar() {
                     </>
                       :<>
                           <li className='nav-item'>
-                              <Link to='/' className='nav-links'>
+                              <Link to='/login' className='nav-links'>
                                   Signin
                               </Link>
                           </li>
                           <li className='nav-item'>
-                              <Link to='signup' className='nav-links'>
+                              <Link to='/signup' className='nav-links'>
                                   Signup
                               </Link>
                           </li>

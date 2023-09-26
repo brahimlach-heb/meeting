@@ -59,12 +59,12 @@
 }
 
 .butnn{
- border: none;
- outline: none;
- background: lightskyblue;
- color: #fff;
- border-radius: 10px;
- transition: .3s;
+  border: none;
+  outline: none;
+  background: lightskyblue;
+  color: #fff;
+  border-radius: 10px;
+  transition: .3s;
   border: 1px solid lightskyblue;
   width:  calc(33.33% - 10px);
   height: 40px;
@@ -76,6 +76,30 @@
   padding: 13px;
   text-decoration: none;
 }
+
+.jbyd{
+  border: none;
+  outline: none;
+  background: rgb(10, 10, 10);
+  color: #fff;
+  border-radius: 10px;
+  transition: .3s;
+  border: 1px solid rgb(10, 10, 10);
+  width:  200px;
+  height: 45px;
+  max-width: 150px;
+  cursor: pointer;
+  margin-right: 15px;
+  margin-bottom: 30px;
+  
+  text-decoration: none;
+}
+
+.jbyd:hover{
+  background: #fff;
+  color: #111;
+}
+
 .buttons{
   margin-top: 26px;
 }
