@@ -2,12 +2,7 @@
 .htmlm{
     padding-top: 0%;
 }
-body {
-  background: url("https://www.bootdey.com/img/bgy.png") no-repeat fixed center;
-  background-size: cover;
-  
-  
-}
+
 
 .fa-2x {
   font-size: 1.5em;
@@ -297,7 +292,7 @@ body {
 /*Conversation*/
 
 .conversation {
-  padding-bottom: 59px;
+  padding-bottom: 3%;
   margin: 0 !important;
   height: 100%;
   /*width: 100%;*/
@@ -400,7 +395,7 @@ body {
   width: 100%;
   background-color: #f5f1ee;
   padding: 10px 10px 10px 5px !important;
-  margin-top: 150px  !important;
+  margin-top: 37%  !important;
   margin-bottom: -50px;
   
 }
@@ -535,14 +530,7 @@ body {
     vertical-align: baseline;
   }
   /*Conversation*/
-  .conversation {
-    padding: 0 !important;
-    margin: 0 !important;
-    height: 100%;
-    /*width: 100%;*/
-    border-left: 1px solid rgba(0, 0, 0, .08);
-    /*overflow-y: auto;*/
-  }
+
   .message {
     height: calc(100% - 140px);
   }

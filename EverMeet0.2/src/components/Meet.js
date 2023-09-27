@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom';
 function Meet(){
     const [cards, setCards] = useState([]);
     const openVideoCallInNewTab = () => {
-          window.location.href='http://localhost:8080/';
+        window.open('http://localhost:8080/', '_blank');
+         
         };
     useEffect(() => {
       // Fetch data from the API using fetch
@@ -50,7 +51,8 @@ function Meet(){
         <div>
             <section className="sectionM">
                 <div className="containeer">
-                    <h1 className="h1M">Upcoming&nbsp;Meetings</h1> <button className="jbyd" onClick={openVideoCallInNewTab}>Join By ID</button>
+                    <h1 className="h1M">Upcoming&nbsp;Meetings</h1>
+                    <button className="jbyd" onClick={()=>window.location.href='http://localhost:8080/join'}>Join By ID</button>
                     <div className="cards">
                         {
                             cards.map((card, i)=>(

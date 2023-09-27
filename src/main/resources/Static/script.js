@@ -4,10 +4,12 @@ let client = AgoraRTC.createClient({mode:'rtc', codec:"vp8"})
 //#2
 let config = {
     appid:'9c57646972054ce6bd54ab0124b8ff4b',
-    token:'007eJxTYLgvvNPm+bKi+AbO54rfFGr9lV6H18ZEnuh6O/HovOpXRfcVGCyTTc3NTMwszY0MTE2SU82SUkxNEpMMDI1MkizS0kySFD7xpTYEMjJYrLrCzMgAgSA+M0NiZSIDAwCE9iAy',
+    token:null,
     uid:null,
-    channel:'aya',
+    chnl: null,
+    channel:null,
 }
+
 
 //#3 - Setting tracks for when user joins
 let localTracks = {
@@ -28,6 +30,26 @@ let remoteTracks = {}
 document.getElementById('join-btn').addEventListener('click', async () => {
     //fix this
     config.uid = document.getElementById('username').value
+    config.chnl = document.getElementById('channel').value;
+    if (document.getElementById('token')==null) {
+        // La valeur est vide ou ne contient que des espaces blancs
+        await fetch("/spring/callFastAPI/"+config.chnl)
+        .then(Response => Response.text())
+        .then(data =>{
+            config.token = data.slice(1,-1);
+            config.channel = config.chnl;
+            console.log(config.token);
+            console.log("jbt data:"+data);
+        }).catch(error=>{
+            console.error('maktabch dji data:',error);
+        })
+        alert(config.Token);
+    } else {
+        // La valeur n'est pas vide
+    console.log("join bouton");
+    config.channel = config.chnl;
+    config.token = document.getElementById('token').value;
+    }
     await joinStreams()
     document.getElementById('join-wrapper').style.display = 'none'
     document.getElementById('footer').style.display = 'flex'

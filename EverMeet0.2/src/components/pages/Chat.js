@@ -8,8 +8,8 @@ function Chat() {
   return (
     <>
     <Navbar/>
-    <ChatMessage />
     
+    <ChatMessage />
     </>
   );
 }

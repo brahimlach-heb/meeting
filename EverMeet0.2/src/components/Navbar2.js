@@ -14,7 +14,7 @@ function Navbar() {
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo'>
              EverMeet.
-            <i class='fab fa-typo3' />
+            <i className='fab fa-typo3' />
           </Link>
           {/* {button && <Button buttonStyle='btn--outline'>SIGN IN</Button>}*/}
         </div>

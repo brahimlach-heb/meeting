@@ -27,7 +27,7 @@ options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Apple
 options.add_experimental_option("detach", True)
 app = FastAPI()
 @app.get("/generate_token/{id}")
-def gettokenid(id:int):
+def gettokenid(id:str):
             driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
             # Open the URL
             driver.get("https://console.agora.io/token/Kmh-w4Sg7")

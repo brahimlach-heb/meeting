@@ -16,7 +16,7 @@ public class SpringControllerGetToken {
     private RestTemplate restTemplate;
 
     @GetMapping("/callFastAPI/{item_id}")
-    public ResponseEntity<String> callFastAPI(@PathVariable int item_id) {
+    public ResponseEntity<String> callFastAPI(@PathVariable String item_id) {
         String fastAPIUrl = "http://127.0.0.1:8000/generate_token/" + item_id ;
         ResponseEntity<String> response = restTemplate.getForEntity(fastAPIUrl, String.class);
         return ResponseEntity.ok(response.getBody());

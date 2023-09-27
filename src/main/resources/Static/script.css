@@ -27,7 +27,7 @@ main {
 }
 
 
-#username{
+#username, #token, #channel{
     padding: 20px;
     font-size: 18px;
     border-radius: 10px;
@@ -40,7 +40,7 @@ main {
     width:20px;
 }
 
-#join-btn {
+#join-btn, #create-btn {
 
     background-color: lightskyblue;
     border: none;
