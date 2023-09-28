@@ -30,8 +30,13 @@ public class User extends BaseEntity{
 	private String email;
 	private String pass;
 
-	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL)
 	@JsonManagedReference
 	List<Historique> historiqueList=new ArrayList<>();
+	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+	@JsonManagedReference
+	List<Meeting> meetingList=new ArrayList<>();
+
+
 
 }

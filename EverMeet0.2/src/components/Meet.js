@@ -4,17 +4,27 @@ import '../App.css';
 import { useState,useEffect } from "react";
 import moment from 'moment';
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 
 function Meet(){
+  const value=localStorage.getItem('idb');
+  console.log("useridmeetings:"+value);
     const [cards, setCards] = useState([]);
-    const openVideoCallInNewTab = () => {
-        window.open('http://localhost:8080/', '_blank');
-         
+    const openVideoCallInNewTab = (idmeet) => {
+      console.log("hani ghadi n5edm");
+        axios.get(`${process.env.REACT_APP_BASE_URL}/changecase/`+idmeet+`&`+value)
+      .then(response => {
+        console.log("haniiii:"+response.data);
+      })
+      .catch(error => {
+        console.error("There was an error fetching data", error);
+      });
+      window.open('http://localhost:8080/', '_blank');
         };
     useEffect(() => {
       // Fetch data from the API using fetch
-      fetch(`${process.env.REACT_APP_BASE_URL}/getmeetings`)
+      fetch(`${process.env.REACT_APP_BASE_URL}/getmeetings/`+value)
         .then(response => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -62,7 +72,7 @@ function Meet(){
                             <p className="pM">End time: {moment(card.endTime).format('MMMM Do YYYY, h:mm:ss a')}</p>
                             <p className="pM">Meeting ID: {card.id}</p>
                             <div className="buttons">
-                                <Link onClick={openVideoCallInNewTab} className="butnn">Start</Link>
+                                <Link onClick={()=>openVideoCallInNewTab(card.id)} className="butnn">Start</Link>
                                 <Link to={`/Update/${card.id}`} className="butnn">Edit</Link>
                                 <Link className="butnn" onClick={() => handleDelete(card.id)}>Delete</Link>
                             </div>

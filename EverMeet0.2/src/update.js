@@ -3,12 +3,14 @@ import React, { useState,useEffect } from "react";
 import "./components/Host.css";
 
 function Verify(props) {
+  const value=localStorage.getItem('idb');
+  console.log("update:"+value);
  const [formData, setFormData] = useState({
     date:'',
     });
     useEffect(() => {
         // URL of the API you want to fetch
-        const apiUrl = 'http://localhost:8080/getMeet/'+props.userid;
+        const apiUrl = `${process.env.REACT_APP_BASE_URL}/getMeet/`+props.userid;
     
         fetch(apiUrl)
           .then((response) => {
@@ -61,14 +63,14 @@ function Verify(props) {
     console.log(dataToSend)
     // Here you can perform any actions you want with the submitted data
     try {
-      const response = await fetch('http://localhost:8080/save', {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/update/`+value, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
           },
           body: JSON.stringify(dataToSend),
       });
-
+       console.log("update nooooow:"+response);
       if (!response.ok) {
           throw new Error('Network response was not ok');
       }

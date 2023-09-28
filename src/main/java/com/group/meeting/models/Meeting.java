@@ -1,4 +1,5 @@
 package com.group.meeting.models;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -11,7 +12,7 @@ import java.util.List;
 public class Meeting {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
 
     @Column(name = "title")
     protected String title;
@@ -24,7 +25,9 @@ public class Meeting {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     protected LocalDateTime endTime;
 
-
+    @ManyToOne
+    @JsonBackReference
+    private User user;
 
     @ElementCollection
     @CollectionTable(name = "meeting_attendees", joinColumns = @JoinColumn(name = "user_id"))
@@ -35,6 +38,8 @@ public class Meeting {
     }
 
     public Meeting(Meeting meeting) {
+        this.startTime=meeting.startTime;
+        this.endTime=meeting.endTime;
         this.title = meeting.title;
     }
 

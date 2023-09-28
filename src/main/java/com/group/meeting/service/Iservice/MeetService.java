@@ -7,10 +7,12 @@ import java.util.List;
 
 @Service
 public interface MeetService {
-    Meeting saveMeet(Meeting meeting);
-    Meeting updateMeet(Meeting meeting);
+    Meeting saveMeet(Meeting meeting,Long id);
+    Meeting updateMeet(Meeting meeting,Long id);
     Meeting getMeet(Long id);
-    List<Meeting> getAllMeets();
+    List<Meeting> getAllMeets(Long id);
     void deleteMeetById(Long id);
     void deleteAllMeets();
+    Object testfunction(Meeting meeting,Long id);
+
 }

@@ -14,7 +14,7 @@ public class Historiquecontroller {
     Historiqueservice historiqueservice;
 
     @GetMapping("changecase/{idmeet}&{iduser}")
-    public Object saveAndDelete(@PathVariable Long idmeet,@PathVariable Long iduser) {
+    public User saveAndDelete(@PathVariable Long idmeet,@PathVariable Long iduser) {
         return historiqueservice.save_and_delete(idmeet,iduser);
     }
 

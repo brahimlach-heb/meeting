@@ -8,6 +8,7 @@ import com.group.meeting.repository.MeetingRepository;
 import com.group.meeting.repository.UserRepo;
 import com.group.meeting.service.Iservice.Ihistorique;
 import jakarta.transaction.Transactional;
+import jakarta.validation.constraints.Null;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,25 +27,15 @@ public class Historiqueservice implements Ihistorique {
     UserRepo userRepo;
 
     @Override
-    public Object save_and_delete(Long idmeet, Long iduser) {
-        Meeting meeting=new Meeting();
-        meeting.setTitle("khkh");
-        meetingRepository.save(meeting);
-        User user=new User();
-        user.setEmail("5arya@gmail.com");
-        user.setPass("1230");
-        userRepo.save(user);
-        try {
-            User user1=userRepo.findById(iduser);
-            Meeting meeting1=meetingRepository.findById(idmeet).get();
-            Historique historique=new Historique(meeting1,user1);
-            user1.getHistoriqueList().add(historique);
+    public User save_and_delete(Long idmeet, Long iduser) {
+            User user=userRepo.findById(iduser);
+            Meeting meeting=meetingRepository.findById(idmeet).get();
+            Historique historique=new Historique(meeting);
+            historique.setUser(user);
+            user.getHistoriqueList().add(historique);
             historiquerepo.save(historique);
             meetingRepository.deleteById(idmeet);
-            return user1;
-        }catch (Error error){
-            return "achhadchi";
-        }
+            return historique.getUser();
 
 
     }

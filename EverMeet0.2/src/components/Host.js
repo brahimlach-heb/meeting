@@ -3,6 +3,8 @@ import React, { useState,useEffect } from "react";
 import "./Host.css";
 
 function Host() {
+  const value=localStorage.getItem('idb');
+  console.log("Host:"+value);
  const [formData, setFormData] = useState({
   date: '',
     });
@@ -32,7 +34,7 @@ function Host() {
     console.log(dataToSend)
     // Here you can perform any actions you want with the submitted data
     try {
-      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/save`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/save/`+value, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',

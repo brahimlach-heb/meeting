@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 public interface Ihistorique {
-    Object save_and_delete(Long idmeet, Long iduser);
+    User save_and_delete(Long idmeet, Long iduser);
     List<Historique> GetAllHistory(Long iduser);
 
 }

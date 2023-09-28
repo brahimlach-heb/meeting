@@ -23,9 +23,9 @@ public class Historique extends Meeting{
     public Historique() {
         super();
     }
-    public Historique(Meeting meeting,User user) {
+    public Historique(Meeting meeting) {
         super(meeting);
-        this.user=user;
+        this.user=meeting.getUser();
     }
 
 }

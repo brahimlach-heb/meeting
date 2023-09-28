@@ -5,10 +5,11 @@ import Navbar from '../Navbar';
 import ChatMessage from '../Chat';
 
 function Chat() {
+  const value=localStorage.getItem('idb');
+  console.log("userid"+value);
   return (
     <>
     <Navbar/>
-    
     <ChatMessage />
     </>
   );

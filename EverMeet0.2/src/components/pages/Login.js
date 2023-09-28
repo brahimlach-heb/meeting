@@ -9,7 +9,9 @@ function Login() {
     console.log(process.env.REACT_APP_BASE_URL);
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
+    var Iduser;
     const navigate = useNavigate();
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,7 +20,9 @@ function Login() {
             email : email,
             pass : pass
         }).then((response) => {
-            console.log(response);
+            console.log(response.data.Id);
+            Iduser=response.data.Id;
+            localStorage.setItem('idb',Iduser);
             if(response.data.firstName){
                 localStorage.setItem('user',response.data);
                 navigate('/home');
@@ -26,7 +30,7 @@ function Login() {
                  alert("Please enter correct details");
             }
         }).catch((error) => {
-            console.log(error);
+            alert('email or password is failed!!');
         })
     }
 
