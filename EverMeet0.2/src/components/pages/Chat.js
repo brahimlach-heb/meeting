@@ -5,11 +5,14 @@ import Navbar from '../Navbar';
 import ChatMessage from '../Chat';
 
 function Chat() {
-  return (
+  return(
     <>
     <Navbar/>
+    <div style={{ display: 'flex', minHeight: '100vh' }}>
+      <Sidebar />
+      <ChatMessage />
+    </div>
     
-    <ChatMessage />
     </>
   );
 }
