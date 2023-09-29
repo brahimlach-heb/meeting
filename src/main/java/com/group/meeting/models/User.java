@@ -36,6 +36,9 @@ public class User extends BaseEntity{
 	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
 	@JsonManagedReference
 	List<Meeting> meetingList=new ArrayList<>();
+	@OneToMany(mappedBy = "sender",cascade = CascadeType.ALL)
+	@JsonManagedReference
+	List<UserChat> userChats=new ArrayList<>();
 
 
 
